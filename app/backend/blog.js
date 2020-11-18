@@ -77,6 +77,9 @@ self.prototype.getUserRole = function(req){
 
 self.prototype.getTagsEnabledByUserRole = function(req){
 	const userRole = this.setting.roles_tag[this.getUserRole(req)];
+	console.log(userRole);
+	console.log(userRole);
+	console.log(userRole);
 	if(req.query.tag && typeof req.query.tag==='string' && userRole.indexOf(req.query.tag) > -1){
 		return req.query.tag;
 	}else if(req.query.tag && req.query.tag['$in']){
