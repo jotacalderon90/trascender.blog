@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+	
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="{{data:(doc.keywords || doc.config.properties.meta.keywords)}}" />
+		<meta name="description" content="{{data:(doc.description || doc.config.properties.meta.description)}}" />
+		<meta name="Author" content="{{data:(doc.author || doc.config.properties.meta.author)}}" />
+		
+		<title>{{data:(doc.title || doc.config.properties.meta.title)}}</title>
+
+		<meta property="og:title" content="{{data:(doc.title || doc.config.properties.meta.title)}}" />
+		<meta property="og:image" content="{{data:doc.config.properties.host}}{{data:(doc.img || '/assets/media/img/logo.png')}}" />
+
+		<base href="/" />
+		
+		<link rel="shortcut icon" href="assets/media/img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="assets/media/img/favicon.ico" type="image/x-icon">
+		
+		<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="app/main.css" media="all"/>
+		
+		<!--@IONIC-->
+		<script type="module"	src="assets/@ionic/pwa-elements/1.5.2/dist/ionicpwaelements/ionicpwaelements.esm.js"></script>
+		<script nomodule		src="assets/@ionic/pwa-elements/1.5.2/dist/ionicpwaelements/ionicpwaelements.js"></script>
+			
+		<link rel="manifest" href="/manifest.json" />
+		
+		<!--if:doc.config.recaptcha && doc.config.recaptcha.enabled-->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<!--/if-->
+		
+	</head>
+	<body>
+		<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
+		<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="assets/bower_components/angular/angular.min.js"></script>
+		<script src="assets/bower_components/ckeditor/ckeditor.js"></script>
+		<script src="assets/js/qrcode.min.js"></script>
+		<script src="assets/js/instascan.min.js"></script>
+		<script src="assets/js/socket.io-2.3.0.js"></script>
+		<script src="assets/js/jcryption.js"></script>
+		<script src="assets/js/moment.js"></script>
+		<script src="assets/js/moment-with-locales.js"></script>
+		<script src="assets/js/capacitor.js"></script>
+		<script src="assets/js/trascender.js"></script>
+		
+		<script>
+			moment.locale("es");
+			const app = angular.module('myApp', []);
+			const host ="{{data:doc.config.properties.host}}";
+			const ip = "{{data:doc.ip}}";
+			const headers = {{data:JSON.stringify(doc.headers)}};
+			const user = {{data:((!doc.user)?"{}":JSON.stringify(doc.user))}};
+			const isApp = true;
+			const onOpen = {{data:((!doc.onOpen)?undefined:JSON.stringify(doc.onOpen))}};
+			app.modules = {};
+		</script>
+		
+		<div data-ng-app="myApp" data-ng-controller="ctrl as ctrl">
+			
+			<div class="loader">
+				<i class="fa fa-spin fa-spinner"></i>
+			</div>
+		
+			<!--include:alert/clave-->
+			<script src="app/alert/clave.js"></script>
+			
+			<!--include:alert/prompt-->
+			<script src="app/alert/prompt.js"></script>
+			
+			<!--include:alert/message-->
+			<script src="app/alert/message.js"></script>
+			
+			<!--define:main-->
+			
+			<!--incluir aplicación por defecto-->
+			<!--include:application/application-->
+		</div>
+		
+		<script src="app/main.js"></script>
+	</body>
+</html>

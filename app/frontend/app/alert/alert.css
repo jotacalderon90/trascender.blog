@@ -1,0 +1,12 @@
+#alert_modal_form h5{
+	font-size: 56px;
+	margin-top: 100px;
+}
+
+@media (max-width: 990px) {	
+	#alert_modal_form h5{
+		font-size: 36px;
+		margin-top: 0px;
+		text-align:justify;
+	}
+}

@@ -1,0 +1,30 @@
+<div class="modal fade" id="message_modal_form">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="left btn-head" data-dismiss="modal" data-ng-click="ctrl.application.menuToggle()">
+					<i class="fa fa-close"></i>
+				</button>
+				<h4 class="modal-title">Contáctame</h4>
+			</div>
+			<div class="modal-body text-justify">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus mi, fermentum eu nibh non, mattis eleifend magna. Aenean in erat rhoncus, porttitor sem nec, commodo eros. In hendrerit orci sed molestie ultrices. Proin viverra purus eu luctus rutrum. Nullam lacinia rutrum interdum. Nulla sagittis, orci et tincidunt congue, elit metus consequat dui, in fringilla felis sapien vitae nulla. Vestibulum vestibulum, erat tristique lacinia dignissim, nibh odio pellentesque dolor, sed bibendum ipsum ex et metus. Nulla eleifend ligula id magna dapibus viverra. Aenean quam lectus, ullamcorper at libero vitae, imperdiet rhoncus nisl. Integer commodo, felis vel cursus aliquam, velit sem dictum elit, et cursus urna tellus quis tellus. Vivamus convallis nisi tristique velit congue consectetur.</p>
+					
+				<input class="form-control" placeholder="Email" data-ng-model="ctrl.message.newdoc.email" type="text" />
+				<br>
+				<textarea class="form-control" placeholder="Mensaje" rows="5" data-ng-model="ctrl.message.newdoc.message" ></textarea>
+				<br>
+					
+				<!--if:doc.config.recaptcha.enabled-->
+				<div class="g-recaptcha" data-sitekey="{{data:doc.config.recaptcha.public}}" >
+				</div>
+				<br />
+				<!--/if-->
+						
+				<button class="btn btn-primary btn-block" data-ng-click="ctrl.message.create()" >ENVIAR</button>
+
+				<p id="message_log"></p>
+			</div>
+		</div>
+	</div>
+</div>

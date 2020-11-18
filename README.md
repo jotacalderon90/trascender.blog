@@ -1,2 +1,2 @@
-# trascender.blog
-Sistema de blog basado en trascender
+# practico
+sistema de notificaciones para publicar servicios y necesidades

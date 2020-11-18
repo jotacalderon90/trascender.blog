@@ -1,0 +1,17 @@
+{
+	"name": "Trascender - PWA",
+	"short_name": "Trascender",
+	"start_url": "/",
+	"display": "fullscreen",
+	"background-color": "#ccc",
+	"theme-color": "#5FAAES",
+	"icons": [{
+		"src": "/assets/media/img/icons/144x144.png",
+		"sizes": "144x144",
+		"type": "image/png"
+	}, {
+		"src": "/assets/media/img/logo.png",
+		"sizes": "100x100",
+		"type": "image/png"
+	}]
+}

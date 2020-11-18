@@ -1,0 +1,23 @@
+<!--alert-->
+<div class="block">
+	<link rel="stylesheet" href="app/alert/alert.css" media="all"/>
+	<div id="alert">
+		<div class="modal fade" id="alert_modal_form" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" data-ng-class="ctrl.alert.class_title">{{ctrl.alert.title}}</h4>
+					</div>
+					<div class="modal-body text-center">
+						<h5>{{ctrl.alert.msg}}</h5>
+						<input type="text" class="form-control input-lg" data-ng-model="ctrl.alert.answer" data-ng-show="ctrl.alert.showInput" id="alert_input"/>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-lg" data-ng-repeat="option in ctrl.alert.options" data-ng-click="ctrl.alert.response(option[0])">{{option[1]}}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="app/alert/alert.js"></script>
+</div>

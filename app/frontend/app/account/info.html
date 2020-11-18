@@ -1,0 +1,24 @@
+<div class="modal fade" id="account_modal_info">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="left btn-head" data-dismiss="modal" data-ng-click="ctrl.application.menuToggle()">
+					<i class="fa fa-close"></i>
+				</button>
+				<h4 class="modal-title">Perfil de <small>{{data:doc.user.email}}</small></h4>
+			</div>
+			<div class="modal-body text-justify">
+				<form role="form" action="/account/update" method="POST">
+					<label>Contraseña</label>
+					<input class="form-control" placeholder="Password" name="password" type="password" value="{{data:doc.user.password}}" />
+					<br>
+					<label>Nickname</label>
+					<input class="form-control" placeholder="Nickname" name="nickname" type="text" value="{{data:doc.user.nickname}}" />
+					<br>
+					<button type="submit" class="btn btn-lg btn-success btn-block" >Guardar</button>
+					<a class="btn btn-lg btn-warning btn-block" href="/account/logout" >Cerrar sesión</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

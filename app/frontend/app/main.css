@@ -1,0 +1,291 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: black;
+}
+body{
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'roboto',Arial,Helvetica,sans-serif;
+	color: #444;
+}
+pre {
+	background: black;
+	opacity: 0.7;
+	color: white;
+}
+canvas{
+	max-width: 100%;
+}
+img{
+	max-width: 100%;
+}
+a {
+	color: #efe9e8;
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+h2{
+	font-size: 16px;
+}
+.block{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.block .menu-inside{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.fa{
+	font-size: 24px;
+}
+.btn-head{
+	background: #EEEEEE;
+	color: #444;
+	border: 0;
+	width: 50px;
+	height: 50px;
+}
+/*DROPDOWN*/
+.dropdown-menu{
+	background: #EEEEEE;
+	padding: 0px;
+	margin: 0px;
+	border-radius: 0px;
+	color: #444;
+	opacity: 0.95;
+}
+.dropdown-menu li{
+	padding: 10px;
+	cursor: pointer;
+}
+.dropdown-menu li:active > span{
+	font-weight: bold;
+}
+.dropdown-menu li:hover > span{
+	font-weight: bold;
+}
+/*MODAL*/
+.modal-dialog{
+	margin: 0;
+	width: 100%;
+	height: 100%
+}
+.modal-header{
+	padding: 0px;
+	height: 50px;
+	border: 0px;
+	background: #EEEEEE;
+}
+.modal-header h4{
+	/*float: left;
+	margin-left: 70px;*/
+}
+.modal-header .modal-title{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+button.close{
+	background: black;
+	opacity: 1;
+	text-shadow: none;
+}
+button.close:hover{
+	opacity: 1;
+	color: white;
+	font-weight: bold;
+}
+.modal-content{
+	min-height: 100%;
+	max-height: 100%;
+	height: auto;
+	background: none;
+	color: #444;
+	text-align: center;
+	overflow: auto;
+	border-radius: 0px;
+}
+.modal-body{
+	color: white;
+}
+.modal-footer{
+	border-top:0px;
+	position: fixed;
+	bottom: 0;
+	width: auto;
+	right: 0;
+	padding: 0px;
+	margin: 15px;
+	margin-right: 25px;
+}
+.modal-footer .btn{
+	padding: 3px 6px;
+}
+.left{
+	position: absolute;
+	left: 0;
+}
+.right{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+@media (min-width: 768px) {
+	.modal-body{
+		width: 50%;
+		margin: auto;
+	}
+}
+/*input*/
+.form-control{
+	border: 0px;
+	background: black;
+	opacity: 0.8;
+	color: white;
+}
+.btn-default{
+	background: none;
+	color: white;
+}
+.btn-default:hover{
+	background: none;
+	color: white;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+	background: black;
+	opacity: 0.8;
+}
+/*LIST-GROUP*/
+.list-group .list-group-item{
+	background: black;
+	opacity: 0.7;
+	margin-bottom: 10px;
+	border: 0px;
+	color: white;
+}
+.list-group .list-group-item:hover,
+.list-group .list-group-item:focus,
+.list-group .list-group-item:active{
+	background: black;
+	opacity: 0.7;
+	color: white;
+}
+/*JUMBOTRON*/
+.jumbotron{
+	background: #EEEEEE;
+	opacity: 0.8;
+	padding: 10px;
+}
+/*LOGGER*/
+.alert{
+	margin-top: 20px;
+	background: black;
+	opacity: 0.7;
+}
+
+
+
+.g-recaptcha{
+	overflow: hidden;
+}
+
+
+
+
+/*****************/
+/*CHECKBOX SLIDER*/
+/*****************/
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+.switch input {
+	display:none;
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+input:checked + .slider {
+	background-color: #0069ff;
+	opacity: 0.7;
+}
+input:focus + .slider {
+	box-shadow: 0 0 1px #0069ff;
+}
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+.slider.round {
+	border-radius: 34px;
+}
+.slider.round:before {
+	border-radius: 50%;
+}
+
+
+
+
+/**********/
+/*CKEDITOR*/
+/**********/
+textarea.cke_source{
+	background-color: #000!important;
+}
+
+
+.loader{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: black;
+	z-index: 9999;
+}
+.loader i{
+	color: white;
+	width: 25px;
+	height: 25px;
+	
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.opacity{
+	opacity: 0.5;
+}

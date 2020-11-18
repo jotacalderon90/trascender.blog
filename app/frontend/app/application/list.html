@@ -1,0 +1,23 @@
+<div class="modal fade" id="application_modal_list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="left btn-head" data-dismiss="modal" data-ng-click="ctrl.application.menuToggle()">
+					<i class="fa fa-close"></i>
+				</button>
+				<h4 class="modal-title">Aplicaciones</h4>
+			</div>
+			<div class="modal-body text-justify">
+				<div class="row">
+					<div class="col-md-4" data-ng-repeat="row in ctrl.application.coll" data-ng-show="ctrl[row.name].showApp()">
+						<div class="jumbotron">
+							<button class="btn btn-default btn-block" data-ng-click="ctrl.application.refreshSelectApps(row.name);ctrl[row.name].open()" data-dismiss="modal">
+								<i class="fa" data-ng-class="row.icon"></i> <span>{{((row.label)?row.label:row.name)}}</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

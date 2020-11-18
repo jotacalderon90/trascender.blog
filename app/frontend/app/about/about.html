@@ -1,0 +1,32 @@
+<!--about-->
+<div class="block">
+	<div id="about">
+		<div class="modal fade" id="about_modal_about" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="left btn-head" data-dismiss="modal" data-ng-click="ctrl.application.menuToggle()">
+							<i class="fa fa-close"></i>
+						</button>
+						<h4 class="modal-title">Acerca de</h4>
+					</div>
+					<div class="modal-body text-justify" id="about_editable">
+						<!--editable-->
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus mi, fermentum eu nibh non, mattis eleifend magna. Aenean in erat rhoncus, porttitor sem nec, commodo eros. In hendrerit orci sed molestie ultrices. Proin viverra purus eu luctus rutrum. Nullam lacinia rutrum interdum. Nulla sagittis, orci et tincidunt congue, elit metus consequat dui, in fringilla felis sapien vitae nulla. Vestibulum vestibulum, erat tristique lacinia dignissim, nibh odio pellentesque dolor, sed bibendum ipsum ex et metus. Nulla eleifend ligula id magna dapibus viverra. Aenean quam lectus, ullamcorper at libero vitae, imperdiet rhoncus nisl. Integer commodo, felis vel cursus aliquam, velit sem dictum elit, et cursus urna tellus quis tellus. Vivamus convallis nisi tristique velit congue consectetur.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus mi, fermentum eu nibh non, mattis eleifend magna. Aenean in erat rhoncus, porttitor sem nec, commodo eros. In hendrerit orci sed molestie ultrices. Proin viverra purus eu luctus rutrum. Nullam lacinia rutrum interdum. Nulla sagittis, orci et tincidunt congue, elit metus consequat dui, in fringilla felis sapien vitae nulla. Vestibulum vestibulum, erat tristique lacinia dignissim, nibh odio pellentesque dolor, sed bibendum ipsum ex et metus. Nulla eleifend ligula id magna dapibus viverra. Aenean quam lectus, ullamcorper at libero vitae, imperdiet rhoncus nisl. Integer commodo, felis vel cursus aliquam, velit sem dictum elit, et cursus urna tellus quis tellus. Vivamus convallis nisi tristique velit congue consectetur.</p>
+						<!--/editable-->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" title="Editar" data-ng-show="ctrl.hasRole('admin') && ctrl.about.action!='edit'" data-ng-click="ctrl.about.edit()"> 
+							<i class="fa fa-pencil"></i>
+						</button>
+						<button type="button" class="btn btn-primary" title="G" data-ng-show="ctrl.hasRole('admin') && ctrl.about.action=='edit'" data-ng-click="ctrl.about.save()"> 
+							<i class="fa fa-save"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="app/about/about.js"></script>	
+</div>

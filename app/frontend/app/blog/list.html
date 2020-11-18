@@ -1,0 +1,92 @@
+<div class="modal fade" id="blog_modal_list">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="btn-group menu-inside btn-head left">
+					<button type="button" class="dropdown-toggle btn-head" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-bars"></i>
+					</button>
+					<ul class="dropdown-menu">
+					
+						<!--CLOSE-->
+						<li data-dismiss="modal" data-ng-click="ctrl.application.menuToggle()">
+							<i class="fa fa-close"></i>
+						</li>
+						<li data-dismiss="modal" data-ng-click="ctrl.blog.search()">
+							<i class="fa fa-search"></i>
+						</li>
+						
+						<!--SORTED-->
+						<li data-dismiss="modal" data-toggle="modal" data-target="#blog_modal_sort">
+							<i class="fa fa-arrows-v"></i>
+						</li>
+						
+						<!--ADMIN-->
+						<li data-ng-show="ctrl.hasRole('admin')" class="divider"></li>
+						<li data-ng-show="ctrl.hasRole('admin')" data-ng-click="ctrl.blog.new()" data-dismiss="modal" data-toggle="modal" data-target="#blog_modal_form">
+							<i class="fa fa-plus"></i>
+						</li>
+						<li data-ng-show="ctrl.hasRole('admin')" data-dismiss="modal" data-toggle="modal" data-target="#blog_modal_config">
+							<i class="fa fa-cogs"></i>
+						</li>
+						<li data-ng-show="ctrl.hasRole('admin')" class="divider"></li>
+						
+						<!--TAGS-->
+						<li data-ng-click="ctrl.blog.getByTag('')">
+							Todas
+						</li>
+						<li data-ng-repeat="tag in ctrl.blog.tag" data-ng-click="ctrl.blog.getByTag(tag)">
+							{{tag}}
+						</li>
+					</ul>
+				</div>
+				<h4 class="modal-title">{{ctrl.blog.title}}</h4>
+			</div>
+			<div class="modal-body" data-ng-show="ctrl.blog.coll.length > 0">
+				<!--DESKTOP-->
+				<div class="hidden-xs">
+					<div class="row">
+						<div class="col-md-6" data-ng-repeat="row in ctrl.blog.coll" data-ng-click="ctrl.blog.read(row._id)">
+							<article>
+								<img data-ng-src="{{row.thumb}}"/>
+								<div class="info">
+									{{row.title}}
+									<br>
+									<small title="{{row.datetitle}}">{{row.datefromnow}}</small>
+								</div>
+							</article>
+						</div>
+					</div>
+					<br>
+					<br>
+					<a data-ng-click="ctrl.blog.getCollection()" data-ng-show="ctrl.blog.obtained<ctrl.blog.cant">
+						cargar más...
+						<br>
+						<span>{{ctrl.blog.obtained}}/{{ctrl.blog.cant}}</span>
+					</a>
+					<br>
+					<br>
+				</div>
+				<!--MOBILE-->
+				<article class="visible-xs" data-ng-show="ctrl.blog.coll.length > 0">
+					<img data-ng-src="{{ctrl.blog.coll[ctrl.blog.index].thumb}}" data-ng-click="ctrl.blog.read(ctrl.blog.coll[ctrl.blog.index]._id)"/>
+					<div class="info">
+						{{ctrl.blog.coll[ctrl.blog.index].title}}
+						<br>
+						<small title="{{ctrl.blog.coll[ctrl.blog.index].datetitle}}">{{ctrl.blog.coll[ctrl.blog.index].datefromnow}}</small>
+					</div>
+					<p class="text-right">{{ctrl.blog.coll[ctrl.blog.index].resume}}</p>
+				</article>
+			</div>
+			<div class="modal-body" data-ng-show="ctrl.blog.coll.length == 0">
+				<div class="alert alert-warning">
+					<strong>Aún no existen registros!</strong>
+				</div>
+			</div>
+			<!--MOBILE-->
+			<div class="modal-footer visible-xs" data-ng-show="ctrl.blog.coll.length > 0">
+				<p>{{ctrl.blog.index+1}}/{{ctrl.blog.cant}}</p>
+			</div>
+		</div>
+	</div>
+</div>
