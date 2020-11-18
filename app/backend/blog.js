@@ -202,10 +202,10 @@ self.prototype.total = async function(req,res){
 	try{
 		req.query = (req.method=="GET")?JSON.parse(req.query.query):(req.method=="POST")?req.body.query:{};
 		req.query.tag = this.getTagsEnabledByUserRole(req);
-		console.log(req.query.tag);
-		if(req.query.tag && req.query.tag['$in'] && (req.query.tag['$in'].length==0 || req.query.tag['$in']==undefined)){
-			delete req.query.tag['$in'];
+		if(req.query.tag['$in']==undefined){
+			delete req.query.tag['$in']
 		}
+		console.log(req.query);
 		const total = await this.mongodb.count("blog",req.query);
 		res.send({data: total});
 	}catch(e){
@@ -222,10 +222,10 @@ self.prototype.collection = async function(req,res){
 		const options = (req.method=="GET")?JSON.parse(req.query.options):(req.method=="POST")?req.body.options:{};
 		req.query = (req.method=="GET")?JSON.parse(req.query.query):(req.method=="POST")?req.body.query:{};
 		req.query.tag = this.getTagsEnabledByUserRole(req);
-		console.log(req.query.tag);
-		if(req.query.tag && req.query.tag['$in'] && (req.query.tag['$in'].length==0 || req.query.tag['$in']==undefined)){
-			delete req.query.tag['$in'];
+		if(req.query.tag['$in']==undefined){
+			delete req.query.tag['$in']
 		}
+		console.log(req.query);
 		const data = await this.mongodb.find("blog",req.query,options);
 		res.send({data: data});
 	}catch(e){
