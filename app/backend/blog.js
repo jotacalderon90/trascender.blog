@@ -203,7 +203,7 @@ self.prototype.total = async function(req,res){
 		req.query = (req.method=="GET")?JSON.parse(req.query.query):(req.method=="POST")?req.body.query:{};
 		req.query.tag = this.getTagsEnabledByUserRole(req);
 		if(req.query.tag['$in']==undefined){
-			delete req.query.tag['$in']
+			delete req.query.tag;
 		}
 		console.log(req.query);
 		const total = await this.mongodb.count("blog",req.query);
@@ -223,7 +223,7 @@ self.prototype.collection = async function(req,res){
 		req.query = (req.method=="GET")?JSON.parse(req.query.query):(req.method=="POST")?req.body.query:{};
 		req.query.tag = this.getTagsEnabledByUserRole(req);
 		if(req.query.tag['$in']==undefined){
-			delete req.query.tag['$in']
+			delete req.query.tag;
 		}
 		console.log(req.query);
 		const data = await this.mongodb.find("blog",req.query,options);
