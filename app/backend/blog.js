@@ -77,11 +77,10 @@ self.prototype.getUserRole = function(req){
 
 self.prototype.getTagsEnabledByUserRole = function(req){
 	const userRole = this.setting.roles_tag[this.getUserRole(req)];
-	console.log(userRole);
-	console.log(userRole);
-	console.log(userRole);
 	if(req.query.tag && typeof req.query.tag==='string' && userRole.indexOf(req.query.tag) > -1){
 		return req.query.tag;
+	}else if(userRole==undefined){
+		return {$in: undefined};
 	}else if(req.query.tag && req.query.tag['$in']){
 		return {$in: req.query.tag['$in'].filter((r)=>{
 			return userRole.indexOf(r)>-1;
@@ -208,7 +207,6 @@ self.prototype.total = async function(req,res){
 		if(req.query.tag['$in']==undefined){
 			delete req.query.tag;
 		}
-		console.log(req.query);
 		const total = await this.mongodb.count("blog",req.query);
 		res.send({data: total});
 	}catch(e){
@@ -228,7 +226,6 @@ self.prototype.collection = async function(req,res){
 		if(req.query.tag['$in']==undefined){
 			delete req.query.tag;
 		}
-		console.log(req.query);
 		const data = await this.mongodb.find("blog",req.query,options);
 		res.send({data: data});
 	}catch(e){
